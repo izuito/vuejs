@@ -1,6 +1,8 @@
 <template>
     <div id="list">
         <h1>{{ message }}</h1>
+        <button :disabled="!$can('write')">write</button>
+        <button :disabled="!$can('delete')">delete</button>        
     </div>
 </template>
 

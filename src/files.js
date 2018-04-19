@@ -1,25 +1,21 @@
 export default [
   {
     path: '/home',
-    name: 'Home',
-    component: '/Home',
-    meta: {
-      id: 1,
-      menu: false
-    }
-  },
-  {
-    path: '/painel',
     name: 'Controle de Acesso',
     icon: 'ti-panel',
-    component: '/Menu',
+    component: '/Home',
+    meta: {
+      permission: 'public'
+    },
     children: [  
       {
         path: '/usuario/index',
         name: 'UsuarioIndex',
         component: '/Usuario/Index',
         meta: {
-          menu: true
+          menu: true,
+          permission: 'public',
+          permissionUser: 'create&read'
         }
       },
       {
@@ -27,7 +23,9 @@ export default [
         name: 'UsuarioList',
         component: '/Usuario/List',
         meta: {
-          menu: false
+          menu: false,
+          permission: 'public',
+          permissionUser: 'write&delete'
         }
       },
       {
@@ -35,7 +33,9 @@ export default [
         name: 'UsuarioMerge',
         component: '/Usuario/Merge',
         meta: {
-          menu: false
+          menu: false,
+          permission: 'public|admin',
+          permissionUser: ''
         }
       }
     ]

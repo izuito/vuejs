@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueAxios from 'vue-axios'
 import VueAcl from 'vue-acl'
+
 // import Vuex from 'vuex'
 // import { sync } from 'vuex-router-sync'
 
@@ -12,9 +13,9 @@ import router from './router/index'
 Vue.use(VueAxios, axios)
 // Vue.use(Vuex)
 
-//Vue.use(VueAcl, { router: router, init: 'public', save: true })
-
 // sync(store, router)
+
+Vue.use(VueAcl, { router: router, init: 'public', save: true })
 
 new Vue({
   el: '#app',
